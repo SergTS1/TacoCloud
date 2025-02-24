@@ -1,5 +1,17 @@
+server:
+  port: 8020
+
 spring:
   datasource:
     generate-unique-name: false
     name: tacocloud
+
+  security:
+    oauth2:
+      client:
+        registration:
+          facebook:
+            client-id: <facebook client id>
+            clientSecret: <facebook client secret>
+            scope: email, public_profile
 

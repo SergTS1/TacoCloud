@@ -35,10 +35,15 @@ public class SecurityConfig {
                 .authorizeHttpRequests()
                 .requestMatchers("/design", "/orders").hasRole("USER")
                 .requestMatchers("/", "/**").permitAll()
+//                .and()
+//                .formLogin()
                 .and()
-                .formLogin()
+                .oauth2Login()
                 .loginPage("/login")
                 .defaultSuccessUrl("/design")
+                .and()
+                .logout()
+                .logoutSuccessUrl("/")
                 .and()
                 .build();
     }
